@@ -42,20 +42,27 @@ print(numKArrayInput)
 #creating objects
 #part A simple shading
 #eye location value setting
-eyeLocation = [numArrayInput[0], numArrayInput[1], numArrayInput[2]]
+
+eyeLocationList = [numArrayInput[0], numArrayInput[1], numArrayInput[2]]
+eyeLocation = np.array(eyeLocationList) #eyeLocation object
 
 #light direction value setting
-lightDirection = [numArrayInput[3], numArrayInput[4], numKArrayInput[5]]
+lightDirectionList = [numArrayInput[3], numArrayInput[4], numKArrayInput[5]]
+lightDirection = np.array(lightDirectionList) #lightDirection object
 
 #getting coordinates
-p = [numArrayInput[9], numArrayInput[10], numArrayInput[11]]
-q = [numArrayInput[12], numArrayInput[13], numArrayInput[14]]
-r = [numArrayInput[15], numArrayInput[16], numArrayInput[17]]
-
+pList = [numArrayInput[9], numArrayInput[10], numArrayInput[11]]
+qList = [numArrayInput[12], numArrayInput[13], numArrayInput[14]]
+rList = [numArrayInput[15], numArrayInput[16], numArrayInput[17]]
+#triangle
+p = np.array(pList)
+q = np.array(qList)
+r = np.array(rList)
+#find certeroid
+centeroid = (1/3)(p*q*r)
 #performing culling operation
 backOrForward = 2
 directionN = 0
-center = 0
 vertexV = (eyeLocation - center) #/||eyeLocation -center||
 if directionN * vertexV < 0:
     backOrForward = 1

@@ -62,12 +62,12 @@ r = np.array(rList)
 centeroid = (1/3)(p*q*r)
 #performing culling operation
 backOrForward = 2
-directionN = 0
-vertexV = (eyeLocation - center) #/||eyeLocation -center||
-if directionN * vertexV < 0:
-    backOrForward = 1
-elif directionN * vertexV > 0:
+vertexV = (eyeLocation - centeroid) / np.dot(eyeLocation - centeroid)
+if lightDirection * vertexV < 0:
     backOrForward = 0
+elif directionN * vertexV > 0:
+    backOrForward = 1
+
 
 
 

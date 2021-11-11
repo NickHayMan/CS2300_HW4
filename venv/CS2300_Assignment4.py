@@ -29,31 +29,25 @@ fileName = input()
 #fill data array from file
 inputData = reader(fileName)
 print(inputData)
-
-numArrayInput = np.empty(18)
-numArrayInput.fill(0)
-#Laoyout for how KNum input works
+#Layout for how KNum input works
 #numKArrayInput = np.array([NumK1, NumK2, NumK3, NumK4, NumK5, NumK6, NumK7, NumK8, NumK9])
-numKArrayInput = np.empty(9)
-numKArrayInput.fill(0)
-print(numArrayInput)
-print(numKArrayInput)
+
 
 #creating objects
 #part A simple shading
 #eye location value setting
 
-eyeLocationList = [numArrayInput[0], numArrayInput[1], numArrayInput[2]]
+eyeLocationList = [inputData[0], inputData[1], inputData[2]]
 eyeLocation = np.array(eyeLocationList) #eyeLocation object
 
 #light direction value setting
-lightDirectionList = [numArrayInput[3], numArrayInput[4], numKArrayInput[5]]
+lightDirectionList = [inputData[3], inputData[4], inputData[5]]
 lightDirection = np.array(lightDirectionList) #lightDirection object
 
 #getting coordinates
-pList = [numArrayInput[9], numArrayInput[10], numArrayInput[11]]
-qList = [numArrayInput[12], numArrayInput[13], numArrayInput[14]]
-rList = [numArrayInput[15], numArrayInput[16], numArrayInput[17]]
+pList = [inputData[9], inputData[10], inputData[11]]
+qList = [inputData[12], inputData[13], inputData[14]]
+rList = [inputData[15], inputData[16], inputData[17]]
 #triangle
 p = np.array(pList)
 q = np.array(qList)
@@ -69,7 +63,7 @@ elif directionN * vertexV > 0:
     backOrForward = 1
 
 
-
+#part B - projection
 
 
 
